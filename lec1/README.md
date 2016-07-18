@@ -114,7 +114,7 @@ class Programmer(var name:String,var language:String,var favDrink:String)
 |Char | A single 16-bit Unicode character. It has a minim.|
 
 
-### Show in REAPLE
+### Show in REAPL
    
 * String interpolation
 * XML LITERALS
@@ -303,4 +303,12 @@ scala>:q
 
 ```
 
+
+#### Work Work
+Extend the Rational example.
+Add the following operators.
+*
+/
+<
+==
 
