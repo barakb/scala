@@ -1,7 +1,5 @@
 ### What is Scala
-Scala is a general-purpose programming language designed to express common pro-
-gramming patterns in a concise, elegant, and type-safe way. It smoothly integrates fea-
-tures of object-oriented and functional programming languages, enabling
+Scala is a general-purpose programming language designed to express common programming patterns in a concise, elegant, and type-safe way. It smoothly integrates features of object-oriented and functional programming languages, enabling
 programmers to be more productive. Martin Odersky (the creator of Scala) and his
 team started development on Scala in 2001 in the programming methods laboratory
 at EPFL (École Polytechnique Fédérale de Lausanne). Scala made its public debut in
@@ -25,8 +23,7 @@ that treats computation as the evaluation of mathematical functions and avoids s
 and mutable data.
 
 #### Scala as a scalable and extensible language
-Scala stands for scalable language. 7 One of the design goals of Scala is to create a lan-
-guage that will grow and scale with your demand. Scala is suitable for use as a scripting
+Scala stands for scalable language. One of the design goals of Scala is to create a language that will grow and scale with your demand. Scala is suitable for use as a scripting
 language, as well as for large enterprise applications. Scala’s component abstraction,
 succinct syntax, and support for both object-oriented and functional programming
 make the language scalable.
