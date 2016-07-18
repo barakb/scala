@@ -161,9 +161,13 @@ b: Int = 2
 ```
 
 * Defining functions `def welcome(name: String) :String = {"Exciting times ahead" + name }`
+
 `def welcome() :String = {"Exciting times ahead" }`
+
 `def welcome :String = "Exciting times ahead"`
+
 `def welcome = "Exciting times ahead"`
+
 * return is optional `def max(a: Int, b: Int) = if(a > b) a else b`
 * polymorphic function, type parameter `def toList[A](value:A) = List(value)`
 * function as objects
