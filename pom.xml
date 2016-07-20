@@ -20,6 +20,7 @@
 
     <modules>
         <module>lec1</module>
+        <module>lec2</module>
     </modules>
 
     <dependencies>
