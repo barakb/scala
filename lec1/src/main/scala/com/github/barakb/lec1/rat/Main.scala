@@ -10,8 +10,10 @@ object Main {
   implicit def int2Rational(n: Int): Rational = new Rational(n)
 
   def main(args: Array[String]): Unit = {
-    println(new Rational(2, 4) + new Rational(2, 3))
-    println(new Rational(2, 4) + 1)
+//    println(Rational(2, 4) + 1)
     println(1 + Rational(2, 4))
+//    println(new Rational(2, 4) + new Rational(2, 3))
+//    println(new Rational(2, 4) + 1)
+//    println(1 + Rational(2, 4))
   }
 }

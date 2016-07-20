@@ -7,7 +7,8 @@ package com.github.barakb.lec1.rat
   * @since 12.0
   */
 
-// 1. class Rational (n : Int, d : Int)
+//case class Rational (n : Int, d : Int)
+
 
 // 2. with toString
 /*
@@ -23,6 +24,7 @@ class Rational (n : Int, d : Int) {
 
   override def toString: String = n + "/" + d
 }
+
 */
 
 //adding the add method take one
@@ -33,10 +35,11 @@ class Rational (n : Int, d : Int) {
 
   override def toString: String = n + "/" + d
 
-  def add(r : Rational): Rational ={
+  def add(r : Rational): Rational = {
     new Rational(r.n + this.n, r.d + this.d)
   }
-}*/
+}
+*/
 
 // adding the add method take 2
 /*
@@ -51,15 +54,15 @@ class Rational (n : Int, d : Int) {
   def add(r: Rational): Rational = {
     new Rational(r.number * denom +  number * r.denom ,  denom * r.denom)
   }
-}*/
-
+}
+*/
 // Secondary constractor
 /*
-class Rational (n : Int, d : Int) {
+class Rational (val number : Int, val denom : Int) {
 
-  require(d != 0)
-  val number : Int = n
-  val denom : Int = d
+  require(denom != 0)
+//  val number : Int = n
+//  val denom : Int = d
 
   override def toString: String = number + "/" + denom
 
@@ -67,7 +70,8 @@ class Rational (n : Int, d : Int) {
     new Rational(r.number * denom +  number * r.denom ,  denom * r.denom)
   }
   def this(n : Int) = this(n, 1)
-}*/
+}
+*/
 
 // private methods
 /*
@@ -94,30 +98,30 @@ class Rational (n : Int, d : Int) {
 */
 
 // using natural operation name
+/*
+class Rational (n : Int, d : Int) {
 
-//class Rational (n : Int, d : Int) {
-//
-//  require(d != 0)
-//
-//
-//  private val g = gcd(n, d)
-//
-//  val number : Int = n / g
-//  val denom : Int = d / g
-//
-//  override def toString: String = number + "/" + denom
-//
-//  def +(r: Rational): Rational = {
-//    new Rational(r.number * denom +  number * r.denom ,  denom * r.denom)
-//  }
-//  def this(n : Int) = this(n, 1)
-//
-//  private def gcd(a: Int, b: Int) : Int = if (b == 0) a else gcd(b, a % b)
-//
-//}
+  require(d != 0)
+
+
+  private val g = gcd(n, d)
+
+  val number : Int = n / g
+  val denom : Int = d / g
+
+  override def toString: String = number + "/" + denom
+
+  def +(r: Rational): Rational = {
+    new Rational(r.number * denom +  number * r.denom ,  denom * r.denom)
+  }
+  def this(n : Int) = this(n, 1)
+
+  private def gcd(a: Int, b: Int) : Int = if (b == 0) a else gcd(b, a % b)
+
+}
+*/
 
 // operator overloading
-
 class Rational (n : Int, d : Int) {
 
   require(d != 0)
@@ -141,7 +145,8 @@ class Rational (n : Int, d : Int) {
   private def gcd(a: Int, b: Int) : Int = if (b == 0) a else gcd(b, a % b)
 
 }
+//
 
 object Rational {
-  def apply(n : Int, d : Int): Rational = new Rational(n, d)
+   def apply(n : Int, d : Int): Rational = new Rational(n, d)
 }

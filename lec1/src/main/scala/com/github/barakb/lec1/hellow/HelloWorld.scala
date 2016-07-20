@@ -7,7 +7,7 @@ package com.github.barakb.lec1.hellow
   * @since 12.0
   */
 object HelloWorld {
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) : Unit = {
     println("Hello, world!")
   }
 }
