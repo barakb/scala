@@ -4,6 +4,7 @@ package com.github.barakb.lec1.rat
   * Created by Barak Bar Orion
   * on 7/13/16.
   * An example of a class pa
+  *
   * @since 12.0
   */
 
@@ -137,6 +138,24 @@ class Rational (n : Int, d : Int) {
   def +(r: Rational): Rational = {
     new Rational(r.number * denom +  number * r.denom ,  denom * r.denom)
   }
+
+  def *(r: Rational) : Rational = {
+    new Rational(
+      number * r.number,
+      denom * r.denom
+    )
+  }
+
+  def / (r: Rational) : Rational = {
+    new Rational(
+      number * r.denom,
+      denom * r.number
+    )
+  }
+
+
+  //  }
+
   def +(n: Int): Rational = {
     new Rational(n * denom +  number ,  denom)
   }
@@ -148,5 +167,5 @@ class Rational (n : Int, d : Int) {
 //
 
 object Rational {
-   def apply(n : Int, d : Int): Rational = new Rational(n, d)
+  def apply(n : Int, d : Int): Rational = new Rational(n, d)
 }
