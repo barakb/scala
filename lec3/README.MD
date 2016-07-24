@@ -15,6 +15,8 @@
 * Explain lower bounds ([T >: A]) upper bounds ([T <: A])
 * Implements option `map[B](f: A => B): Option[B]`, `getOrElse[B >: A](default: => B): B`
 
+
+
 #### Use case for option
 
 ```Scala
@@ -27,6 +29,15 @@ val joeDepartment: Option[String] =
 
 lookupByName("Joe").map(_.department)
 
+
+
+
+case class Employee(name: String, department: String)
+
+val m = Map(("horatio", Employee("horatio", "Naval")))
+m.get("horatio")
+m.get("horatio").map(_.department)
+ 
 ```
 
 * Define binary tree using type parameter, mention the terms `polymorphic function` `type constractor` 
