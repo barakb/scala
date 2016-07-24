@@ -1,6 +1,16 @@
 ### TypeParameters
 
-* Write the option class, show the mean function
+* Explain the point on Option
+```Scala 
+
+ def mean(xs: Seq[Double]): Option[Double] =
+      if (xs.isEmpty) None
+      else Some(xs.sum / xs.length)
+
+```
+
+* Write the option class
+
 * Explain +T -T mention the term `covariance`, `contravariance` `invariant`  https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science) 
 * Explain lower bounds ([T >: A]) upper bounds ([T <: A])
 * Implements option `map[B](f: A => B): Option[B]`, `getOrElse[B >: A](default: => B): B`
