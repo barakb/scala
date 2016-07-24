@@ -15,7 +15,7 @@
 * Explain lower bounds ([T >: A]) upper bounds ([T <: A])
 * Implements option `map[B](f: A => B): Option[B]`, `getOrElse[B >: A](default: => B): B`
 
-#### Usa case for option
+#### Use case for option
 
 ```Scala
 

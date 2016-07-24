@@ -21,10 +21,4 @@ class List1Spec extends FlatSpec with Matchers {
   "A list" can "be matched using ::" in {
     (List(1) match { case Cons(_, Nil) => true; case _ => false}) shouldBe true
   }
-//
-//  "A list" can "be matched using List()" in {
-//    (1 :: Nil match { case List(_) => true; case _ => false}) shouldBe true
-//  }
-
-
 }
