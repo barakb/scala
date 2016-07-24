@@ -30,7 +30,9 @@ lookupByName("Joe").map(_.department)
 ```
 
 * Define binary tree using type parameter, mention the terms `polymorphic function` `type constractor` 
- 
+* Define List1
+* Go over List2
+
  
 ### HW
 
