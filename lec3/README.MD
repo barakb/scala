@@ -1,6 +1,6 @@
 ### TypeParameters
 
-* Explain the point on Option
+* Explain the point of `Option`
 ```Scala 
 
  def mean(xs: Seq[Double]): Option[Double] =
