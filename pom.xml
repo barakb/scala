@@ -23,6 +23,7 @@
         <module>lec1</module>
         <module>lec2</module>
         <module>lec3</module>
+        <module>lec4</module>
     </modules>
 
     <dependencies>

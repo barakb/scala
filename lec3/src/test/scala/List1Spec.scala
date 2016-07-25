@@ -7,7 +7,8 @@ import org.scalatest.{FlatSpec, Matchers}
   * @since 12.0
   */
 class List1Spec extends FlatSpec with Matchers {
-  import List1._
+//  import List1._
+  import Lec3._
 
   "A list " can "be created with cons and nil " in {
     Cons(1, Nil) shouldBe a [List[_]]
