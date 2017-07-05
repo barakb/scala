@@ -95,7 +95,7 @@ class Programmer(var name:String,var language:String,var favDrink:String)
 ```
 
 * Static typing vs dynamic typing
-  ! [bad-type-system](bad-type-system.png)
+  ![bad-type-system](bad-type-system.png)
 
 
 #### Basic types
