@@ -1,0 +1,2 @@
+###Strictness and laziness
+@TODO
