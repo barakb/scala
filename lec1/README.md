@@ -96,6 +96,9 @@ class Programmer(var name:String,var language:String,var favDrink:String)
 
 * Static typing vs dynamic typing
   ![bad-type-system](bad-type-system.png)
+  https://yow.eventer.com/events/1004/talks/1054
+  at 51 min
+  
 
 
 #### Basic types
