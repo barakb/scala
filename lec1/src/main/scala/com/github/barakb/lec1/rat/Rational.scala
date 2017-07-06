@@ -57,7 +57,7 @@ class Rational (n : Int, d : Int) {
   }
 }
 */
-// Secondary constractor
+// Secondary contractor
 /*
 class Rational (val number : Int, val denom : Int) {
 
