@@ -87,7 +87,7 @@ object List {
 
   def filterF[A](l: List[A])(f: A => Boolean): List[A] = ???
 
-  // the list is not empty
+  // assume that the list is not empty
   def maximumF[A](isBigger: (A, A) => Boolean)(l: List[A]): A = ???
 
   def reverseF[A](l: List[A]): List[A] = ???
