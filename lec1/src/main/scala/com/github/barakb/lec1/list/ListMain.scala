@@ -11,6 +11,9 @@ import scala.collection.immutable.{Nil => ScalaNil}
   */
 object ListMain extends App{
 
+  val l1 = List(1, 2, 3)
+  println(s"l1 is: $l1")
+
   def add(a:Int, b:Int) : Int = a + b
   add(1, 2)
 

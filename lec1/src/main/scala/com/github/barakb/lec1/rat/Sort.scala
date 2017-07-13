@@ -34,9 +34,9 @@ object Sort extends App {
 
   case class Person(age:Int, name:String)
 
-  val f = Person(16, "Barak") match{
+  val f = Person(16, "Barak") match {
     case Person(17, "Barak") => "Barak young"
-    case Person(18, "Barak") => "Barak"
+    case name@Person(18, "Barak") => "Barak" + " full record was " + name + Person(18, "Barak")
     case x@_ => "I don't know " + x
 
   }

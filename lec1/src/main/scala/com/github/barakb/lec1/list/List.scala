@@ -3,6 +3,7 @@ package com.github.barakb.lec1.list
 /**
   * Created by Barak Bar Orion
   * on 7/9/17.
+  * Talk about Scala List and list like.
   * Shows Co Variance, Contravariance
   * case class
   * companion Object / apply
@@ -44,6 +45,7 @@ object List {
   //  match a predicate.
   def dropWhile[A](l: List[A])(f: A => Boolean): List[A] = ???
 
+
   def take[A](l: List[A], n: Int): List[A] = ???
 
   def takeWhile[A](l: List[A])(f: A => Boolean): List[A] = ???
@@ -66,7 +68,6 @@ object List {
   def maximum[A](isBigger: (A, A) => Boolean)(l: List[A]): A = ???
 
   def reverse[A](l: List[A]): List[A] = ???
-
 
   def foldl[A, B](f: (B, A) => B)(b: B)(l: List[A]): B = l match {
     case Nil => b
