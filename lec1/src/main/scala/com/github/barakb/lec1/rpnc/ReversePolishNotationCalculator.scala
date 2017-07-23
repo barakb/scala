@@ -10,7 +10,9 @@ object ReversePolishNotationCalculator extends App {
 
   /*
 The infix expression "5 + ((1 + 2) × 4) − 3" can be written down like this in RPN:
-5 1 2 + 4 * + 3 −
+5 1 2 + 4 * + 3 − 3 sum
+
+
 The expression is evaluated left-to-right, with the inputs interpreted as shown in the following table (the Stack is the list of values the algorithm is "keeping track of" after the Operation given in the middle column has taken place):
 Input	Action	Stack	Notes
 5	Operand	5	Push onto stack.

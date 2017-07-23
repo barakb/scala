@@ -37,4 +37,6 @@ object ListMain extends App{
 
   println("reversed to cons list: " + foldl((l:List[Int], a:Int) => Cons(a,l): List[Int])(List[Int]())(List(1, 2, 3)))
 
+  println("reversed cons list " + List.reverse(List("a", "b", "c")))
+
 }
