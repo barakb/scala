@@ -69,4 +69,8 @@ object SafeTreeWalk extends App {
 
   println("newFocus1 " + (Some(freeTree, Nil) ->> goLeft ->> goRight ->> modify((_: Char) => 'P') ->> goUp ->> modify((_: Char) => 'C') ->> topMost))
 
+
+//  Home work
+// 1. Extend ->> to support list of actions: (Some(freeTree, Nil) ->> List(goLeft, goRight, goLeft,  modify((_: Char) => 'P'), topMost)
+// 2. Write zipper and safeZipper for List[A]
 }
