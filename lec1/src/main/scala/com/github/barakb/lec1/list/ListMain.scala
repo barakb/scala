@@ -17,26 +17,26 @@ object ListMain extends App{
   def add(a:Int, b:Int) : Int = a + b
   add(1, 2)
 
-  val sumL = foldl(add)(0)(List(1, 2, 3))
-  println(sumL)
-  val sumR = foldr(add)(0)(List(1, 2, 3))
-  println(sumR)
-
+//  val sumL = foldl(0)(List(1, 2, 3)(add)
+//  println(sumL)
+//  val sumR = foldr(0)(List(1, 2, 3)(add))
+//  println(sumR)
+//
   def scalaCons[A](a:A, l:ScalaList[A]): ScalaList[A] = a::l
   def l:List[Int] = List(1, 2, 3)
 
-  val scalaList = foldr((a: Int, l:ScalaList[Int]) => a ::l)(ScalaNil)(l)
+//  val scalaList = foldr((a: Int, l:ScalaList[Int]) => a ::l)(ScalaNil)(l)
 
   println("List: " + l)
 
-  println("scalaList: " + scalaList)
+//  println("scalaList: " + scalaList)
 
-  val reversed = foldl((l:ScalaList[Int], a:Int) => a::l)(ScalaNil)(l)
+//  val reversed = foldl((l:ScalaList[Int], a:Int) => a::l)(ScalaNil)(l)
 
-  println("reversed to scala list: " + reversed)
+//  println("reversed to scala list: " + reversed)
 
-  println("reversed to cons list: " + foldl((l:List[Int], a:Int) => Cons(a,l): List[Int])(List[Int]())(List(1, 2, 3)))
+//  println("reversed to cons list: " + foldl(List[Int]())(List(1, 2, 3))(l:List[Int], a:Int) => Cons(a,l): List[Int])
 
-  println("reversed cons list " + List.reverse(List("a", "b", "c")))
+//  println("reversed cons list " + List.reverse(List("a", "b", "c")))
 
 }

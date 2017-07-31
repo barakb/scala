@@ -34,12 +34,12 @@ object SafeTreeWalk extends App {
     case (Empty, _) => None
   }
 
-  def goRight[A](zipper: Zipper[A]):  Option[Zipper[A]] = zipper match {
+  def goRight[A](zipper: Zipper[A]): Option[Zipper[A]] = zipper match {
     case (Node(a, l, r), bs) => Some(r, RightCrumb(a, l) :: bs)
     case (Empty, _) => None
   }
 
-  def goUp[A](zipper: Zipper[A]):  Option[Zipper[A]] = zipper match {
+  def goUp[A](zipper: Zipper[A]): Option[Zipper[A]] = zipper match {
     case (tree, LeftCrumb(a, r) :: tlc) => Some(Node(a, tree, r), tlc)
     case (tree, RightCrumb(a, l) :: tlc) => Some(Node(a, l, tree), tlc)
     case (_, Nil) => None
@@ -57,20 +57,22 @@ object SafeTreeWalk extends App {
   }
 
   implicit class InfixOps[A](private val maybeZipper: Option[Zipper[A]]) extends AnyVal {
-    def ->>(f: Zipper[A] => Option[Zipper[A]]) : Option[Zipper[A]] = maybeZipper flatMap f
+    def ->>(f: Zipper[A] => Option[Zipper[A]]): Option[Zipper[A]] = maybeZipper flatMap f
   }
 
-  def topMost[A](zipper: Zipper[A]): Option[Zipper[A]] = zipper match{
+  def topMost[A](zipper: Zipper[A]): Option[Zipper[A]] = zipper match {
     case top@(t, Nil) => Some(top)
     case _ => goUp(zipper) ->> topMost
   }
 
-//  println("newFocus1 " +  modify((_: Char) => 'P')(goRight(goLeft(freeTree, Nil))))
+  //  println("newFocus1 " +  modify((_: Char) => 'P')(goRight(goLeft(freeTree, Nil))))
 
   println("newFocus1 " + (Some(freeTree, Nil) ->> goLeft ->> goRight ->> modify((_: Char) => 'P') ->> goUp ->> modify((_: Char) => 'C') ->> topMost))
 
 
-//  Home work
-// 1. Extend ->> to support list of actions: (Some(freeTree, Nil) ->> List(goLeft, goRight, goLeft,  modify((_: Char) => 'P'), topMost)
-// 2. Write zipper and safeZipper for List[A]
+  //  Home work
+  // 1. Define ->>> to support list of actions:
+  //    val path = List(goLeft, goRight, goLeft,  modify((_: Char) => 'P'), topMost)
+  //    (Some(freeTree, Nil) ->>> path
+  // 2. Write zipper and safeZipper for List[A]
 }

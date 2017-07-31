@@ -8,15 +8,20 @@ case class UserWithOneChild(child: Option[UserWithOneChild])
 
 
 object UserWithOneChildApp extends App {
-  val userWithOneChild = // UserWithOneChild(Some(UserWithOneChild(None)))
-  Some(UserWithOneChild
-  (Some(UserWithOneChild
-  (Some(UserWithOneChild(None))))))
+  val userWithOneChild =
+    UserWithOneChild(Some(UserWithOneChild
+    (Some(UserWithOneChild
+    (Some(UserWithOneChild(None)))))))
 
   def grandChild(userWithOneChild: UserWithOneChild): Option[UserWithOneChild] =
-    userWithOneChild.child.flatMap(child => child.child)
+    userWithOneChild.child.flatMap(_.child)
 
-  println(grandChild(userWithOneChild))
+  grandChild(userWithOneChild) match{
+    case None => println("No  grand child")
+    case Some(gc) => println("found grand child " + gc)
+  }
+  grandChild(userWithOneChild).map(gc => println("found one gc " + gc) )
+
 
 }
 
