@@ -29,15 +29,17 @@ object TreeWalk extends App {
           , Node('C', Empty, Empty))))
 
   def changeToP(directions: Directions, tree: Tree[Char]): Tree[Char] = (directions, tree) match {
+    case (_::_, Empty) => Empty
     case (Left :: ds, Node(x, l, r)) => Node(x, changeToP(ds, l), r)
     case (Right :: ds, Node(x, l, r)) => Node(x, l, changeToP(ds, r))
     case (Nil, Node(_, l, r)) => Node('P', l, r)
   }
 
-  def elemAt[A](directions: Directions, tree: Tree[A]): A = (directions, tree) match {
+  def elemAt[A](directions: Directions, tree: Tree[A]): Option[A] = (directions, tree) match {
+    case (_::_, Empty) => None
     case (Left :: ds, Node(x, l, r)) => elemAt(ds, l)
     case (Right :: ds, Node(x, l, r)) => elemAt(ds, r)
-    case (Nil, Node(x, _, _)) => x
+    case (Nil, Node(x, _, _)) => Some(x)
   }
 
   private val directions = List(Right, Left)
@@ -56,10 +58,12 @@ object TreeWalk extends App {
   type Zipper[A] = (Tree[A], Breadcrumbs[A])
 
   def goLeft[A](zipper: Zipper[A]): Zipper[A] = zipper match {
+    case (Empty, bs) => (Empty, bs)
     case (Node(a, l, r), bs) => (l, LeftCrumb(a, r) :: bs)
   }
 
   def goRight[A](zipper: Zipper[A]): Zipper[A] = zipper match {
+    case (Empty, bs) => (Empty, bs)
     case (Node(a, l, r), bs) => (r, RightCrumb(a, l) :: bs)
   }
 

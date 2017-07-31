@@ -37,7 +37,6 @@ object Tree {
       case Node(v,l, r) if isBigger(v, a)=> loop(l)
       case Node(v, l, r) if isBigger(a, v)=> loop(r)
     }
-
     loop(tree)
   }
 }

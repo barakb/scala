@@ -73,6 +73,7 @@ object SafeTreeWalk extends App {
   //  Home work
   // 1. Define ->>> to support list of actions:
   //    val path = List(goLeft, goRight, goLeft,  modify((_: Char) => 'P'), topMost)
-  //    (Some(freeTree, Nil) ->>> path
+  //    (freeTree, Nil) ->>> path
   // 2. Write zipper and safeZipper for List[A]
+//      List(1, 2, 3) ->> goNext ->> goNext ->> modify(_ => 4) ->> goUp
 }
