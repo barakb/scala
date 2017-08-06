@@ -68,6 +68,7 @@ object SafeTreeWalk extends App {
   //  println("newFocus1 " +  modify((_: Char) => 'P')(goRight(goLeft(freeTree, Nil))))
 
   println("newFocus1 " + (Some(freeTree, Nil) ->> goLeft ->> goRight ->> modify((_: Char) => 'P') ->> goUp ->> modify((_: Char) => 'C') ->> topMost))
+  println("newFocus1 " + (Some(freeTree, Nil) ->> goLeft->> goLeft->> goLeft->> goLeft->> goLeft->> goLeft->> goLeft->> goLeft->> goLeft ->> goRight ->> modify((_: Char) => 'P') ->> goUp ->> modify((_: Char) => 'C') ->> topMost))
 
 
   //  Home work

@@ -29,14 +29,14 @@ object TreeWalk extends App {
           , Node('C', Empty, Empty))))
 
   def changeToP(directions: Directions, tree: Tree[Char]): Tree[Char] = (directions, tree) match {
-    case (_::_, Empty) => Empty
+    case (_ :: _, Empty) => Empty
     case (Left :: ds, Node(x, l, r)) => Node(x, changeToP(ds, l), r)
     case (Right :: ds, Node(x, l, r)) => Node(x, l, changeToP(ds, r))
     case (Nil, Node(_, l, r)) => Node('P', l, r)
   }
 
   def elemAt[A](directions: Directions, tree: Tree[A]): Option[A] = (directions, tree) match {
-    case (_::_, Empty) => None
+    case (_ :: _, Empty) => None
     case (Left :: ds, Node(x, l, r)) => elemAt(ds, l)
     case (Right :: ds, Node(x, l, r)) => elemAt(ds, r)
     case (Nil, Node(x, _, _)) => Some(x)
@@ -83,17 +83,22 @@ object TreeWalk extends App {
     case (_, bs) => (tree, bs)
   }
 
+  println("newFocus1 " + modify((_: Char) => 'P')(goRight(goLeft(freeTree, Nil))))
+
+
   implicit class InfixOps[A](private val zipper: Zipper[A]) extends AnyVal {
-    def ->>(f: Zipper[A] => Zipper[A]) : Zipper[A] = f(zipper)
+    def ->>(f: Zipper[A] => Zipper[A]): Zipper[A] = f(zipper)
   }
 
-  def topMost[A](zipper: Zipper[A]): Zipper[A] = zipper match{
+  def topMost[A](zipper: Zipper[A]): Zipper[A] = zipper match {
     case top@(t, Nil) => top
     case _ => topMost(zipper ->> goUp)
   }
 
-  println("newFocus1 " +  modify((_: Char) => 'P')(goRight(goLeft(freeTree, Nil))))
 
   println("newFocus1 " + ((freeTree, Nil) ->> goLeft ->> goRight ->> modify((_: Char) => 'P') ->> goUp ->> modify((_: Char) => 'C') ->> topMost))
 
+  import Implicits.MyIntMethods
+  println(new MyIntMethods(1).add(1))
+  println(1 add 1)
 }
