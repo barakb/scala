@@ -7,7 +7,7 @@ package com.github.barakb.handlingerrors
 object InsuranceRate {
 
 
-  def insuranceRateQuoteOption(optAge: Option[Int], optTickets: Option[Int]): Option[Double] = ???
+  def insuranceRateQuoteOption(optAge: Option[Int], optTickets: Option[Int]): Option[Double] = map2(optAge, optTickets)(insuranceRateQuote)
 
   def parseInsuranceRateQuote(age: String, numberOfSpeedingTickets: String): Option[Double] = {
     val optAge: Option[Int] = Try(age.toInt)
@@ -27,7 +27,9 @@ object InsuranceRate {
     If either Option value is None , then the return value is too. Here is its signature:
    */
 
-  def map2[A, B, C](a: Option[A], b: Option[B])(f: (A, B) => C): Option[C] = ???
+  def map2[A, B, C](a: Option[A], b: Option[B])(f: (A, B) => C): Option[C] =
+    a.flatMap(a => b.map(b => f(a, b)))
+
 
 
   /*

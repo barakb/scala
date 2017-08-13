@@ -48,6 +48,9 @@ object EitherMain extends App {
       tickets <- Try { numberOfSpeedingTickets.toInt }
     } yield insuranceRateQuote(a, tickets)
 
+  def parseInsuranceRateQuote1(age: String, numberOfSpeedingTickets: String): Either[Exception,Double] =
+    Try { age.toInt }.flatMap(a => Try { numberOfSpeedingTickets.toInt }.map(tickets => insuranceRateQuote(a, tickets)))
+
   def insuranceRateQuote(optAge: Int, optTickets: Int): Double = ???
 
 

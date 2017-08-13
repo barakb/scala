@@ -17,8 +17,20 @@ object EmployeeMain extends App {
   val joeManager: Option[Employee] = lookupByName("Joe").flatMap(_.manager)
   val joeDepartmentWithDefault: String = lookupByName("Joe").map(_.department).getOrElse("Default Dept.")
   println(joeManager)
-  print(joeDepartmentWithDefault)
+  println(joeDepartmentWithDefault)
 
+//  given emp name return the manager name
+  def foo(name:String): Option[String] = {
+//    val ret: Option[Employee] = m.get(name)
+//    ret.flatMap(_.manager).map(_.name) getOrElse(null)
+    for{
+      ret <- m.get(name)
+      manager <- ret.manager
+    } yield manager.name
+  }
+
+  println("foo1:" + foo("Joe"))
+  println("foo2:" + foo("Joe1"))
 /*
   We can use filter to convert successes into failures if the successful values don’t
   match the given predicate. A common pattern is to transform an Option via calls to
