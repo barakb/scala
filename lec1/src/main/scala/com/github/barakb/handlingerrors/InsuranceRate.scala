@@ -71,7 +71,6 @@ object InsuranceRate {
   def traverse[A, B](a: List[A])(f: A => Option[B]): Option[List[B]] = ???
 
 
-
-  // explain For-comprehensions
+  // After the home work is done, explain For-comprehensions
   // implement map2 using For-comprehensions
 }
