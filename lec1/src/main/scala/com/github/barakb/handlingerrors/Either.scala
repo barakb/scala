@@ -26,17 +26,20 @@ object EitherMain extends App {
     Right(xs.sum / xs.length)
 
 
-  def safeDiv(x: Int, y: Int): Either[Exception, Int] =
+  def safeDiv1(x: Int, y: Int): Either[Exception, Int] =
     try Right(x / y)
     catch {
       case e: Exception => Left(e)
     }
+
+  def safeDiv2(x: Int, y: Int): Either[Exception, Int] = Try(x / y)
 
   def Try[A](a: => A): Either[Exception, A] =
     try Right(a)
     catch {
       case e: Exception => Left(e)
     }
+
 
 
   def parseInsuranceRateQuote(age: String, numberOfSpeedingTickets: String): Either[Exception,Double] =

@@ -7,11 +7,17 @@ package com.github.barakb.handlingerrors
 case class Employee(name: String, department: String, manager: Option[Employee])
 
 object EmployeeMain extends App {
-  def lookupByName(name: String): Option[Employee] = ???
+  val jm = Employee("JoeManager", "Accounting", None)
+  val j = Employee("Joe", "Accounting", Some(jm))
+  val m = Map("Joe" -> j, "joeManager" -> jm)
+
+  def lookupByName(name: String): Option[Employee] = m.get(name)
 
   val joeDepartment: Option[String] = lookupByName("Joe").map(_.department)
   val joeManager: Option[Employee] = lookupByName("Joe").flatMap(_.manager)
   val joeDepartmentWithDefault: String = lookupByName("Joe").map(_.department).getOrElse("Default Dept.")
+  println(joeManager)
+  print(joeDepartmentWithDefault)
 
 /*
   We can use filter to convert successes into failures if the successful values don’t

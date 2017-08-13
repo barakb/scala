@@ -26,7 +26,7 @@ def failingFn(i: Int): Int = {
 
 * Another way of understanding RT is that the meaning of RT expressions does not depend
 on context and may be reasoned about locally, whereas the meaning of non-RT expressions is context-dependent and requires more global reasoning. For instance,
-the meaning of the RT expression `42 + 5` doesn’t depend on the larger expression it’s embedded
+the meaning of the RT expression `42 + 5` doesn't depend on the larger expression it’s embedded
 in it’s always and forever equal to `47` .
 But the meaning of the expression throw new Exception("fail") is very context-dependent—as we just demonstrated, it takes on
 different meanings depending on which try block (if any) it’s nested within.
