@@ -25,6 +25,7 @@
         <module>lec3</module>
         <module>lec4</module>
         <module>lec5</module>
+        <module>par</module>
     </modules>
 
     <dependencies>
